@@ -27,7 +27,10 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   nitro: {
     prerender: {
-      routes: ['/knowledgebase/functions/ambient', '/knowledgebase/functions/briefing']
+      routes: [
+        '/knowledgebase/framework/attack', '/knowledgebase/framework/destroy', '/knowledgebase/framework/hostage', '/knowledgebase/framework/hvt', '/knowledgebase/framework/ied',
+        '/knowledgebase/functions/ambient', '/knowledgebase/functions/briefing', '/knowledgebase/functions/medical', '/knowledgebase/functions/service'
+      ]
     },
     preset: 'firebase'
   },
