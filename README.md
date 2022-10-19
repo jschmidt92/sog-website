@@ -1,42 +1,21 @@
-# Content v2 Minimal Starter
+<p align="center">
+	<!-- <img src="https://raw.githubusercontent.com/jschmidt92/sog-launcher/master/images/logo.png"> -->
+	<a href="https://github.com/jschmidt92/sog-website/releases/latest">
+		<img src="https://img.shields.io/github/v/release/jschmidt92/sog-website?label=latest%20release" alt="latest-release">
+	</a>
+		<a href="https://github.com/jschmidt92/sog-website/issues">
+		<img src="https://img.shields.io/github/issues/jschmidt92/sog-website" alt="open-issues">
+	</a>
+</p>
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+Welcome to **SOG's Website**.
 
-## Setup
+This website was designed for the Arma 3 SOG Community.
 
-Make sure to install the dependencies:
+If something is broken, contact **JSchmidt92** or open a new issue on **[GitHub](https://github.com/jschmidt92/sog-website/issues)**.
 
-```bash
-# yarn
-yarn install
+</br>
 
-# npm
-npm install
+**For more information, [visit the Wiki.](https://a3sog.org/knowledgebase)**
 
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+**For additional tools, [visit the Website.](https://a3sog.org)**
