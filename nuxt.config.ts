@@ -26,6 +26,9 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/content'],
   nitro: {
+    prerender: {
+      routes: ['/knowledgebase/functions/ambient', '/knowledgebase/functions/briefing']
+    },
     preset: 'firebase'
   },
   postcss: {
