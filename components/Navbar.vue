@@ -1,12 +1,14 @@
 <script setup lang="ts">
 interface Link {
   name: string,
-  href: string
+  href: string,
+  target?: string,
 }
 
 const links: Link[] = [
   { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Download', href: 'https://github.com/jschmidt92/sog-launcher/releases/latest', target: '_blank' },
   { name: 'Knowledge Base', href: '/knowledgebase' }
 ]
 </script>
@@ -17,7 +19,7 @@ const links: Link[] = [
       <nav class="flex justify-center sm:justify-end items-center h-20 px-4">
           <ul class="flex items-center space-x-4">
             <li v-for="(n, i) in links" :key="`navLink-${String(i)}`">
-              <NuxtLink class="nav-link text-white" :to="n.href">{{ n.name }}</NuxtLink>
+              <NuxtLink class="nav-link text-white" :to="n.href" :target="n.target">{{ n.name }}</NuxtLink>
             </li>
           </ul>
       </nav>
