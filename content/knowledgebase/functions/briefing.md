@@ -12,13 +12,13 @@ The mission maker can define the unit for the briefing, the function will then p
 An object(s) and controller(s) can then be set, specifying the different slides to cycle through.
 
 ## Usage
-### Setup Unit
+### Setup Mission Briefing
 1. Setup the Lecture/Briefing set
 2. Place down the screen object(s)
 3. Place down the controller object(s)
 4. Place down the unit _(Optional)_
 
-### Setup Script
+### Create Script
 5. Create a script for briefing/lecture
 
 ```js
@@ -42,7 +42,7 @@ Example:
 
 	[[object(s)], [controller(s)], _arraName, true, [unitName], "topicName", "sentenceName"] remoteExecCall ["SOG_fnc_initSlideShow", 2, false];
 ```
-
+### Call Script
 6. Call the script from `initServer.sqf`_
 
 ```js
