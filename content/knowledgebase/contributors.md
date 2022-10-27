@@ -11,6 +11,7 @@ title: 'Knowledge Base - Contributors'
 
 ## Individuals
 * Clark
+* CreedCoder
 * J. Schmidt
 * Malbryn
 * PDT

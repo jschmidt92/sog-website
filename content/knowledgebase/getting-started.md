@@ -145,4 +145,4 @@ This is the basic setup of a unit, no need to set anything else.
 ## Notes
 * **CBA Settings:** The framework comes with a default CBA Settings file that you can find in the root of the mission folder. However, it covers only a couple of basic mods (e.g. ACE, TFAR, Etc.), so you need to include any additional mods here.
 
-[Latest Release](https://github.com/InnovativeStudios/SOG/releases/latest)
+[Latest Release](https://github.com/jschmidt92/sog-client/releases/latest)
