@@ -47,18 +47,18 @@ function togglePlay() {
 <template>
 	<div>
 		<audio :src="song.audio" preload="auto" ref="audioPlayer"></audio>
-		<article class="grid grid-cols-6 gap-0 rounded-l-full bg-black opacity-75">
-			<div class="relative col-span-1 flex justify-center rounded-l-full">
-				<img class="rounded-full max-h-[4em] max-w-[4em]" :src="song.image" alt="...">
-				<div class="absolute flex justify-center items-center w-full h-full">
-					<!-- <button class="toggle-btn" aria-label="Previous" @click="togglePrevious"><i class="fa-solid fa-backward-step fa-2xl"></i></button> -->
+		<article class="audio-player">
+			<div class="audio-player-brand">
+				<img :src="song.image" alt="...">
+				<div class="audio-player-ctrl">
+					<!-- <button class="toggle-btn" aria-label="Previous" @click="togglePrevious"><i class="fas fa-backward-step fa-2xl"></i></button> -->
 					<button class="toggle-btn" aria-label="Play" @click="togglePlay"><i class="fas fa-2x" :class="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"></i></button>
-					<!-- <button class="toggle-btn" aria-label="Next" @click="toggleNext"><i class="fa-solid fa-forward-step fa-2xl"></i></button> -->
+					<!-- <button class="toggle-btn" aria-label="Next" @click="toggleNext"><i class="fas fa-forward-step fa-2xl"></i></button> -->
 				</div>
 			</div>
-			<div class="col-span-5 p-3">
-				<p class="text-sky-400">{{ song.name }}</p>
-				<p class="text-gray-400 text-xs"><span class="text-gray-200">{{ song.artistName }}</span> - {{ song.albumName }} ({{ song.year }})</p>
+			<div class="audio-player-body">
+				<p>{{ song.name }}</p>
+				<p><span>{{ song.artistName }}</span> - {{ song.albumName }} ({{ song.year }})</p>
 			</div>
 		</article>
 		<!-- <section class="flex flex-row justify-end items-center text-white">

@@ -11,10 +11,6 @@
 	src: url(../webfonts/Tangerine-Bold.ttf);
 }
 
-* {
-	border-radius: 0px !important;
-}
-
 body {
 	@apply bg-gray-100;
 }
@@ -27,6 +23,52 @@ body {
 }
 .module-link {
 	@apply before:prose-headings:text-sky-400 before:prose-headings:content-['#'] before:prose-headings:mr-1 before:prose-h1:content-[''];
+}
+
+.audio-list {
+	@apply bg-black opacity-90;
+}
+.audio-list-body {
+	@apply grid grid-flow-row grid-cols-6;
+}
+.audio-list-brand {
+	@apply col-span-1;
+}
+.audio-list-brand img {
+	@apply flex flex-row justify-center items-center w-full max-h-[4em];
+}
+.audio-list-ctrl {
+	@apply col-span-5 p-3;
+}
+.audio-list-ctrl button {
+	@apply text-sky-400 hover:text-sky-600;
+}
+.audio-list-ctrl p {
+	@apply text-gray-400 text-xs;
+}
+.audio-player {
+	@apply grid grid-cols-6 gap-0 !rounded-l-full bg-black opacity-75;
+}
+.audio-player-body {
+	@apply col-span-5 p-3;
+}
+.audio-player-body :first-child {
+	@apply text-sky-400;
+}
+.audio-player-body :nth-child(2) {
+	@apply text-gray-400 text-xs;
+}
+.audio-player-body :nth-child(2) span {
+	@apply text-gray-200;
+}
+.audio-player-brand {
+	@apply relative col-span-1 flex justify-center;
+}
+.audio-player-brand img {
+	@apply rounded-full max-h-[4em] max-w-[4em];
+}
+.audio-player-ctrl {
+	@apply absolute flex justify-center items-center w-full h-full;
 }
 
 .author-about {
@@ -66,6 +108,9 @@ body {
 .card-body.prose a:hover {
 	@apply text-white;
 	text-shadow: 0 0 0.1875em theme('colors.sky.400'), 0 0 0.1875em theme('colors.black');
+}
+.card-body.prose pre {
+	@apply rounded-none;
 }
 .card-footer {
 	@apply border-t flex justify-between items-center text-sm w-full max-w-none px-4;

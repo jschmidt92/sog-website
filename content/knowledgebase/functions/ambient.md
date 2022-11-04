@@ -2,7 +2,7 @@
 title: 'Knowledge Base - Ambient'
 ---
 
-# Ambient
+# Ambient Function
 
 ## Description
 This functions adds support to create a sound source that plays an ambient sfx sound.

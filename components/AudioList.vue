@@ -46,21 +46,21 @@ function playPrevious() {
 
 <template>
   <div>
-    <section class="bg-black opacity-90" v-if="!isVisible">
+    <section class="audio-list" v-if="!isVisible">
       <template v-for="(song, songIndex) in list" :key="song.id">
-        <div class="grid grid-flow-row grid-cols-6">
-          <div class="col-span-1">
-            <img class="flex flex-row justify-center items-center w-full max-h-[4em]" :src="song.image" alt="...">
+        <div class="audio-list-body">
+          <div class="audio-list-brand">
+            <img :src="song.image" alt="...">
           </div>
-          <div class="col-span-5 p-3">
-            <button class="text-sky-400 hover:text-sky-600" aria-label="Play" @click="playSong(songIndex)">{{ song.name }}</button>
-            <p class="text-gray-400 text-xs"><span class="text-gray-200">{{ song.artistName }}</span> - {{ song.albumName }} ({{ song.year }})</p>
+          <div class="audio-list-ctrl">
+            <button aria-label="Play" @click="playSong(songIndex)">{{ song.name }}</button>
+            <p><span class="text-gray-200">{{ song.artistName }}</span> - {{ song.albumName }} ({{ song.year }})</p>
           </div>
         </div>
       </template>
     </section>
     <section v-if="isVisible">
-      <audio-player :song="list[currentSongIndex]" :is-visible="isVisible" @goBack="(value) => isVisible = value" @next="playNext" @previous="playPrevious" />
+      <audio-player :song="list[currentSongIndex]" :is-visible="isVisible" @goBack="(value: any) => isVisible = value" @next="playNext" @previous="playPrevious" />
     </section>
   </div>
 </template>

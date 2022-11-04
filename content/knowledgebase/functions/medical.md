@@ -2,7 +2,7 @@
 title: 'Knowledge Base - Medical'
 ---
 
-# Medical
+# Medical Function
 
 ## Description
 This function adds support for ACE 3 medical training.
@@ -12,7 +12,7 @@ The mission maker must define dummy units and objects, the framework will monito
 A wound type must be set, specifying the type of wound the dummy spawns with.
 
 ## Usage
-### Setup Dummy Unit(s) and Object(s)
+### Setup Medical Area
 1. Setup the Medical set
 2. Place down the dummy unit(s) and object(s)
 3. Call the `SOG_fnc_spawnVictim` and `SOG_fnc_victimCheck` function within the dummys' init field that links the dummy to the function

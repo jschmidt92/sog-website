@@ -2,7 +2,7 @@
 title: 'Knowledge Base - Briefing'
 ---
 
-# Briefing
+# Briefing Function
 
 ## Description
 This function adds support to create a Briefing with a Lecture/Slideshow.
@@ -12,7 +12,7 @@ The mission maker can define the unit for the briefing, the function will then p
 An object(s) and controller(s) can then be set, specifying the different slides to cycle through.
 
 ## Usage
-### Setup Mission Briefing
+### Setup Briefing Area
 1. Setup the Lecture/Briefing set
 2. Place down the screen object(s)
 3. Place down the controller object(s)
@@ -43,7 +43,7 @@ Example:
 	[[object(s)], [controller(s)], _arraName, true, [unitName], "topicName", "sentenceName"] remoteExecCall ["SOG_fnc_initSlideShow", 2, false];
 ```
 ### Call Script
-6. Call the script from `initServer.sqf`_
+6. Call the script from `initServer.sqf`
 
 ```js
 Example:

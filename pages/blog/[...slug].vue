@@ -21,6 +21,7 @@ useHead ({
       <article class="card">
         <ClientOnly>
           <img :src="article.image" alt="Article Image">
+          <!-- <img :src="require(`@/content${article.dir}/img/${article.image}`)" alt="Article Image" /> -->
           <div class="card-body">
             <p>{{ convertDate(article.date) }}</p>
             <ContentRenderer class="" :value="article">

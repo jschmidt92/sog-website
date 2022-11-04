@@ -2,7 +2,7 @@
 title: 'Knowledge Base - Service'
 ---
 
-# Service
+# Service Function
 
 ## Description
 This function adds support for Vehicle Services.
