@@ -57,7 +57,7 @@ const wikiNav = [
   },
   {
     title: 'Project Board',
-    link: 'https://github.com/users/InnovativeStudios/projects/3/views/1',
+    link: 'https://github.com/users/jschmidt92/projects/4',
     target: '_blank'
   }
 ]
