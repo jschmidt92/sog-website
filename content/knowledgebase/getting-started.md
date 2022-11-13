@@ -21,10 +21,10 @@ Once the folder is created, head over to the GitHub Repository and Download the 
 ![Screenshot](https://camo.githubusercontent.com/1c6b92486b6fd263e5cb2b5f2ab19ffef4f5df95894988ba1f08d161efa3708e/68747470733a2f2f692e696d6775722e636f6d2f763362393878632e706e67)
 
 **Folder Structure**
-You don't really need to change things in the root of the mission file, except for the CBA settings but we'll cover that later. Here's a graph of the `SOG_Framework` folder to understand the structure better:
+You don't really need to change things in the root of the mission file, except for the CBA settings but we'll cover that later. Here's a graph of the `SOGFramework` folder to understand the structure better:
 
 ```
-SOG_Framework
+SOGFramework
    ├───config                - Contains the mission configs
    │   ├───briefing          - Contains the briefing for each side
    │   ├───debriefing        - Contains the possible endings of the mission
@@ -54,14 +54,14 @@ The rest of the attributes should be covered [here](https://community.bistudio.c
 ### Config
 This contains the configuration of the framework, it has two parts: the first one is the essential mission parameters that need to be configured in every mission, the second half is the optional modules that you can enable/disable according to your needs.
 
-The optional modules and their configuration are covered in the README file of each module located in the `SOG_Framework\core\` folder, so let's take a look at the Mission Parameters section now.
+The optional modules and their configuration are covered in the README file of each module located in the `SOGFramework\core\` folder, so let's take a look at the Mission Parameters section now.
 
 * Debug Mode: Enabled by default, while it's enabled it'll show `DEBUG` missages in the in-game chat which can help with the development of the mission. Don't forget to disable this before deploying the mission. `INFO`, `WARNING` and `ERROR` messages will show even if this setting is disabled.
 
 * End Conditions: There are multiple End Conditions that you can use in your mission which are covered [here](https://github.com/InnovativeStudios/SOG/blob/main/SOGFramework/core/end_conditions/README.md).
 
 ### CfgDebriefing
-This file is located in `SOG_Framework\debriefing\` folder and it holds all the possible mission endings for the mission. There are two sections by default:
+This file is located in `SOGFramework\debriefing\` folder and it holds all the possible mission endings for the mission. There are two sections by default:
 | Ending | Description |
 | ------- | ----------- |
 | COOP Endings | Mission Endings in Cooperative Mission Type |
@@ -102,7 +102,7 @@ You can set the date, weather, and the forecase for the mission.
 ### Multiplayer
 You have to change two things here:
 
-First is the **Summary** of the mission. This should be the same as the `overviewText` in `SOG_Framework\config\description.hpp`. This way the description in the mission selection screen will match with the one on the player slot screen.
+First is the **Summary** of the mission. This should be the same as the `overviewText` in `SOGFramework\config\description.hpp`. This way the description in the mission selection screen will match with the one on the player slot screen.
 
 The second thing you have to change is the **Respawn** settings. Change it from 'Disabled' to 'Respawn on Custom Position'.
 > **Note:** You have to change this even if the mission has no respawns.
@@ -140,7 +140,7 @@ After that's done, you need to configure the individual player slots like shown 
 4. **Rank:** Optionally you can set the rank of the unit.
 
 This is the basic setup of a unit, no need to set anything else.
-**At this point the basics are configured and you can start working on the mission itself. Remember, if you need more information about the modules, then check out the `README` in the module folder. You can find the modules [here](https://github.com/InnovativeStudios/SOG/tree/development/SOG_Framework/core).
+**At this point the basics are configured and you can start working on the mission itself. Remember, if you need more information about the modules, then check out the `README` in the module folder. You can find the modules [here](https://github.com/InnovativeStudios/SOG/tree/development/SOGFramework/core).
 
 ## Notes
 * **CBA Settings:** The framework comes with a default CBA Settings file that you can find in the root of the mission folder. However, it covers only a couple of basic mods (e.g. ACE, TFAR, Etc.), so you need to include any additional mods here.
