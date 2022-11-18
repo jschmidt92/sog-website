@@ -38,15 +38,14 @@ Arguments:
 	2: SCALAR - Number of targets eliminated to complete the task
 	3: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
 	4: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
-	5: BOOLEAN - Does the task have a time limit (Optional, default: false)
-	6: TIME - Number of seconds before targets escape (Optional, default: 45) ** timeLimit Must Be Enabled **
+	5: SCALAR - Number of seconds before targets escape (Optional)
 
 Example:
 	// Default No Time Limit
 	["task_name", 1, 2, false] call SOG_attack_fnc_registerAttackTask
 
 	// Attack Within Time Limit
-	["task_name", 1, 2, false, false, true, 45] spawn SOG_attack_fnc_registerAttackTask
+	["task_name", 1, 2, false, false, 45] spawn SOG_attack_fnc_registerAttackTask
 ```
 
 ## Links

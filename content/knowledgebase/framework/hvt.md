@@ -40,8 +40,7 @@ Arguments:
 	4: BOOLEAN - Should the mission end (MissionSuccess) if the task is successful (Optional, default: false)
 	5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 	6: ARRAY - Array of task types to select from (Optional, default: [true, false])
-	7: BOOLEAN - Does the task have a time limit (Optional, default: false)
-	8: TIME - Number of seconds before hvts escape (Optional, default: 45) ** timeLimit Must Be Enabled **
+	7: SCALAR - Number of seconds before hvts escape (Optional)
 
 Example:
 	// Capture No Time Limit
@@ -51,10 +50,10 @@ Example:
 	["task_name", "marker_name", 1, 2, false, false, [false, true]] call SOG_hvt_fnc_registerHvtTask
 
 	// Capture Within Time Limit
-	["task_name", "marker_name", 1, 2, false, false, [true, false], true, 45] spawn SOG_hvt_fnc_registerHvtTask
+	["task_name", "marker_name", 1, 2, false, false, [true, false], 45] spawn SOG_hvt_fnc_registerHvtTask
 
 	// Eliminate Within Time Limit
-	["task_name", "marker_name", 1, 2, false, false, [false, true], true, 45] spawn SOG_hvt_fnc_registerHvtTask
+	["task_name", "marker_name", 1, 2, false, false, [false, true], 45] spawn SOG_hvt_fnc_registerHvtTask
 ```
 
 ## Links

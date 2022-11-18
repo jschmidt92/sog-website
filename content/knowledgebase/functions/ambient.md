@@ -19,7 +19,7 @@ The mission maker must define the object for the sound source, the function will
 Arguments:
 	0: OBJECT - The object that creates the sound source
 	1: STRING - SFX sound that will play at object location
-	2: NUMBER - Amount of time the SFX sound will play (Optional, default: null)
+	2: SCALAR - Amount of time the SFX sound will play (Optional)
 
 Example:
 	[object, "NameOfSFXSound"] call SOG_fnc_ambientSound;
