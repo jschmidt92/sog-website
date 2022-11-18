@@ -54,7 +54,7 @@ Arguments:
 	5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 	6: ARRAY - Array of task types to select from (Optional, default: [false, false])
 	7: SCALAR - Number of seconds before hostages are killed (Optional)
-  8: STRING - Marker name for the cbrn zone
+	8: STRING - Marker name for the cbrn zone
 
 Example:
 	// Default No Time Limit
