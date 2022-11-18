@@ -54,13 +54,14 @@ Arguments:
 	5: BOOLEAN - Should the mission end (MissionFailed) if the task is failed (Optional, default: false)
 	6: ARRAY - Array of task types to select from (Optional, default: [false, false])
 	7: SCALAR - Number of seconds before hostages are killed (Optional)
+  8: STRING - Marker name for the cbrn zone
 
 Example:
 	// Default No Time Limit
 	["task_name", "marker_name", 1, 2, false] call SOG_hostage_fnc_registerHostageTask
 
 	// CBRN Attack When Time Limit Expires
-	["task_name", "marker_name", 1, 2, false, false, [true, false], 45] spawn SOG_hostage_fnc_registerHostageTask
+	["task_name", "marker_name", 1, 2, false, false, [true, false], 45, "marker_name"] spawn SOG_hostage_fnc_registerHostageTask
 
 	// Execution When Time Limit Expires
 	["task_name", "marker_name", 1, 2, false, false, [false, true], 45] spawn SOG_hostage_fnc_registerHostageTask
