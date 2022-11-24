@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   head: {
     script: ['~/assets/js/all.min.js']
   },
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@pinia/nuxt'],
   nitro: {
     prerender: {
       routes: [
