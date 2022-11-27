@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 export interface BriefingObject {
-	id: number
+	id?: number
 	faction: string
 	groups: string
 	summary: string

@@ -3,7 +3,7 @@ import { useBriefingStore } from '@/stores/briefing'
 
 const briefingStore = useBriefingStore()
 
-defineProps({
+defineProps ({
 	briefingObject: { type: Object, required: true }
 })
 
@@ -30,17 +30,17 @@ function convertLineBreaks(str) {
 		<div class="card-body">
 			<div class="card-header">
 				<div>
-					<h3>Navigate to SOGFramework\config\briefing\ and paste the following into the .sqf file based on the players' side.</h3>
+					<h5>Navigate to SOGFramework\config\briefing\ and paste the following into the .sqf file based on the players' side.</h5>
 					<p class="card-meta">// This briefing file was created with the Briefing Generator Tool</p>
 				</div>
 				<div class="btn-group">
-					<button class="btn btn-primary-outline" @click="copyToClipboard()">Copy to Clipboard</button>
-					<button class="btn btn-danger" @click="removeBriefing(briefingObject.id)">Delete</button>
+					<button class="btn btn-outline-primary btn-lg" @click="copyToClipboard()">Copy to Clipboard</button>
+					<button class="btn btn-danger btn-lg" @click="removeBriefing(briefingObject.id)">Delete</button>
 				</div>
 			</div>
 			
 			<div class="card-meta-child">
-<textarea rows="25" readonly="true" id="outputText" class="card-meta-code">NEWTAB("I. Organisation")
+<textarea rows="25" id="outputText" class="card-meta-code" readonly>NEWTAB("I. Organisation")
 <br/><font color='{{ briefingObject.side }}' size='18' face='PuristaBold'>BLUFOR ORBAT</font>
 <br/>
 <br/><font color='{{ briefingObject.side }}' size='14' face='PuristaSemiBold'>{{ convertLineBreaks(briefingObject.faction) }}</font>
@@ -157,34 +157,34 @@ ENDTAB;
 </template>
 
 <style scoped>
+input, select, textarea {
+	@apply border-gray-300 focus:ring-sky-400 my-1;
+}
+select {
+	@apply w-1/4;
+}
+input, textarea {
+	@apply w-full;
+}
 .btn {
-	@apply px-4 py-2 mb-2;
+	@apply inline-block;
 }
 .btn-danger {
 	@apply bg-red-600 border border-red-600 ml-2 text-white hover:bg-red-800;
 }
+.btn-lg {
+	@apply px-4 py-2 text-xl;
+}
 .btn-group {
 	@apply flex flex-row items-center;
 }
-.btn-primary-outline {
+.btn-outline-primary {
 	@apply bg-white border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white;
 }
-.card {
-	@apply border-r border-b drop-shadow-sm bg-white p-4;
-}
-.card-body {
-	@apply w-full max-w-none p-2;
-}
 .card-header {
-	@apply flex justify-between items-center;
+	@apply flex flex-row justify-between items-center;
 }
 .card-meta {
-	@apply text-gray-300 text-sm;
-}
-.card-meta-child {
-	@apply flex justify-between items-center;
-}
-.card-meta-code {
-	@apply bg-gray-100 border border-sky-400 whitespace-pre-line w-full;
+	@apply font-semibold text-base;
 }
 </style>

@@ -1,13 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { useIntelStore } from '@/stores/intel'
 
 const intelStore = useIntelStore()
 
-defineProps({
+defineProps ({
 	intelObject: { type: Object, required: true }
 })
 
-function removeIntel(id) {
+function removeIntel(id: number) {
 	intelStore.deleteIntel(id)
 }
 </script>

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useIntelStore } from '@/stores/intel'
 
 const intelStore = useIntelStore()
@@ -7,6 +7,10 @@ let showOutput = ref(false)
 
 definePageMeta ({
 	layout: false
+})
+
+useHead ({
+	title: 'Intel Generator'
 })
 </script>
 

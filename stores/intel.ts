@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 
 export interface IntelObject {
-	id: number
+	id?: number
 	title: string
 	content: string
-	duration: number
+	duration: string
 	deleteObject: boolean
 	shareGlobally: boolean
 }

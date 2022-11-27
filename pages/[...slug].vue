@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 definePageMeta ({
 	layout: false
 })
@@ -11,9 +11,9 @@ const toc = computed(() => {
 	if (!knowledgebase.value) return []
 	const items = knowledgebase.value.excerpt?.children
 	if (!items) return []
-	const toc = []
+	const toc = [] as any
 	const tags = ["h2", "h3", "h4", "h5", "h6"]
-	items.forEach((item) => {
+	items.forEach((item: any) => {
 		if (tags.includes(item.tag)) {
 			toc.push({
 				id: item.props.id,
@@ -62,7 +62,7 @@ const wikiNav = [
 	}
 ]
 useHead ({
-	title: `${knowledgebase.value.title}`
+	title: `${knowledgebase?.value?.title}`
 })
 </script>
 	
@@ -70,7 +70,7 @@ useHead ({
 	<div>
 		<NuxtLayout name="wiki">
 			<template #toc>
-				<aside class="toc" v-if="knowledgebase.excerpt">
+				<aside class="toc" v-if="knowledgebase?.excerpt">
 					<div class="toc-body">
 						<h2 class="toc-title">Table Of Contents</h2>
 						<ul class="nav">
@@ -90,7 +90,7 @@ useHead ({
 			<template #content>
 				<article class="card">
 					<ClientOnly>
-						<ContentRenderer class="card-body prose prose-zinc" :value="knowledgebase">
+						<ContentRenderer class="card-body prose prose-zinc" :value?="knowledgebase">
 							<template #empty>
 								<p>No content found.</p>
 							</template>

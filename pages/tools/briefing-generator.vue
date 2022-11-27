@@ -8,6 +8,9 @@ let showOutput = ref(false)
 definePageMeta ({
 	layout: false
 })
+useHead ({
+	title: 'Briefing Generator'
+})
 </script>
 
 <template>
@@ -21,7 +24,7 @@ definePageMeta ({
 				<BriefingCreate />
 		
 				<div class="btn-group">
-					<button class="btn btn-primary" @click="showOutput = !showOutput" v-if="!briefingStore.isEmpty">Generate</button>
+					<button class="btn btn-primary btn-lg" @click="showOutput = !showOutput" v-if="!briefingStore.isEmpty">Generate</button>
 				</div>
 			</template>
 
@@ -34,10 +37,13 @@ definePageMeta ({
 
 <style scoped>
 .btn {
-	@apply px-4 py-2;
+	@apply inline-block;
+}
+.btn-lg {
+	@apply px-4 py-2 text-xl w-1/4;
 }
 .btn-group {
-	@apply flex flex-col justify-center mb-4 mx-auto w-1/4;
+	@apply flex flex-row justify-center mb-4;
 }
 .btn-primary {
 	@apply bg-sky-400 border border-sky-400 text-white hover:bg-sky-600;

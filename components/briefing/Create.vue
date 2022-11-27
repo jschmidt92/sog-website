@@ -2,6 +2,7 @@
 import { useBriefingStore } from '@/stores/briefing'
 
 const briefingStore = useBriefingStore()
+const isOpen = ref(false)
 const briefingObject = ref({
 	faction: '',
 	groups: '',
@@ -35,6 +36,11 @@ const briefingObject = ref({
 })
 
 function addBriefing() {
+	if (!briefingObject.value.faction || !briefingObject.value.groups || !briefingObject.value.summary || !briefingObject.value.roe || !briefingObject.value.intent || !briefingObject.value.frequencies || !briefingObject.value.success || !briefingObject.value.failure || !briefingObject.value.restrictions || !briefingObject.value.side) {
+		isOpen.value = !isOpen.value
+		return {}
+	}
+
 	briefingStore.addBriefing(briefingObject.value)
 
 	briefingObject.value = {
@@ -72,14 +78,18 @@ function addBriefing() {
 </script>
 
 <template>
+	<template v-if="isOpen">
+		<Alert type="warning" head="Holy guacamole!" msg="You should check in on some of those fields below." @close="isOpen = false" />
+	</template>
+
 	<form class="card" @submit.prevent="addBriefing">
-		<h2>Create Briefing</h2>
 		<div class="card-body">
-			<div class="form-category">
-				<h3>I. ORGANIZATION</h3>
+			<h1>Create Briefing</h1>
+			<div>
+				<div class="h4">I. ORGANIZATION</div>
 				<ul>
 					<li>
-						<h4 class="card-subtitle">ORBAT</h4>
+						<div class="card-subtitle h5">ORBAT</div>
 						<label for="faction">Player Faction</label>
 						<input type="text" name="faction" id="faction" class="input-text" placeholder="The players' faction (e.g. 101st Airborne Division, US Army)" v-model="briefingObject.faction">
 					</li>
@@ -90,16 +100,16 @@ function addBriefing() {
 				</ul>
 			</div>
 
-			<div class="form-category">
-				<h3>II. Situation</h3>
+			<div>
+				<div class="h4">II. Situation</div>
 				<ul>
-					<h4 class="card-subtitle">Background</h4>
+					<div class="card-subtitle h5">Background</div>
 					<li>
 						<label for="summary">Summary</label>
 						<textarea name="summary" id="summary" rows="3" class="input-text" placeholder="A short background story for the mission" v-model="briefingObject.summary"></textarea>
 					</li>
 
-					<h4 class="card-subtitle">Area of Operations</h4>
+					<div class="card-subtitle h5">Area of Operations</div>
 					<div class="card-meta">Terrain</div>
 					<li>
 						<label for="terrain">Description</label>
@@ -126,7 +136,7 @@ function addBriefing() {
 						<input type="text" name="civilians" id="civilians" class="input-text" placeholder="If there are any civilians in the AO, how they should be handled etc." v-model="briefingObject.civilians">
 					</li>
 
-					<h4 class="card-subtitle">Enemy Forces</h4>
+					<div class="card-subtitle h5">Enemy Forces</div>
 					<div class="card-meta">Composition and Strength</div>
 					<li>
 						<label for="composition">Description</label>
@@ -159,10 +169,10 @@ function addBriefing() {
 				</ul>
 			</div>
 
-			<div class="form-category">
-				<h3>III. Mission</h3>
+			<div>
+				<div class="h4">III. Mission</div>
 				<ul>
-					<h4 class="card-subtitle">Mission Intent</h4>
+					<div class="card-subtitle h5">Mission Intent</div>
 					<li>
 						<label for="intent">Description</label>
 						<textarea name="intent" id="intent" rows="3" class="input-text" placeholder="Intent of the mission and the objectives (e.g. your objective is to capture...)" v-model="briefingObject.intent"></textarea>
@@ -170,17 +180,17 @@ function addBriefing() {
 				</ul>
 			</div>
 
-			<div class="form-category">
-				<h3>IV. Support and Logistics</h3>
+			<div>
+				<div class="h4">IV. Support and Logistics</div>
 				<ul>
-					<h4 class="card-subtitle">Support</h4>
+					<div class="card-subtitle h5">Support</div>
 					<li>
 						<label for="supports">Available</label>
 						<textarea name="supports" id="supports" rows="3" class="input-text" placeholder="Available friendly supports (e.g. CAS by RAPTOR, artillery fire support by HAMMER etc.)" v-model="briefingObject.supports"></textarea>
 					</li>
 
 
-					<h4 class="card-subtitle">Logistics</h4>
+					<div class="card-subtitle h5">Logistics</div>
 					<li>
 						<label for="maintenance">Maintenance</label>
 						<textarea name="maintenance" id="maintenance" rows="3" class="input-text" placeholder="Information about RRR (e.g. RRR is available at the friendly FOB etc.)" v-model="briefingObject.maintenance"></textarea>
@@ -194,7 +204,7 @@ function addBriefing() {
 						<textarea name="resupplies" id="resupplies" rows="3" class="input-text" placeholder="Available resupplies (e.g. 1x medical resupply crate is available, to be requested by the CO)" v-model="briefingObject.resupplies"></textarea>
 					</li>
 
-					<h4 class="card-subtitle">Signals</h4>
+					<div class="card-subtitle h5">Signals</div>
 					<li>
 						<label for="frequencies">Radio Frequencies</label>
 						<textarea name="frequencies" id="frequencies" rows="3" class="input-text" placeholder="The radio net structure used in the mission" v-model="briefingObject.frequencies"></textarea>
@@ -202,10 +212,10 @@ function addBriefing() {
 				</ul>
 			</div>
 
-			<div class="form-category">
-				<h3>V. Notes</h3>
+			<div>
+				<div class="h4">V. Notes</div>
 				<ul>
-					<h4 class="card-subtitle">Respawns</h4>
+					<div class="card-subtitle h5">Respawns</div>
 					<li>
 						<label for="player_respawn">Player Respawn</label>
 						<textarea name="player_respawn" id="player_respawn" rows="3" class="input-text" placeholder="Player respawn info (e.g. unlimited, rolling respawns, 5-minute respawn timer etc.)" v-model="briefingObject.player_respawn"></textarea>
@@ -218,7 +228,7 @@ function addBriefing() {
 						<label for="reinsertion">Reinsertion</label>
 						<textarea name="reinsertion" id="reinsertion" rows="3" class="input-text" placeholder="How the respawned players will get back to the AO (e.g. teleport via squad rally point system, transported with heli etc.)" v-model="briefingObject.reinsertion"></textarea>
 					</li>
-					<h4 class="card-subtitle">End Conditions</h4>
+					<div class="card-subtitle h5">End Conditions</div>
 					<li>
 						<label for="success">Success</label>
 						<textarea name="success" id="success" rows="3" class="input-text" placeholder="Mission Success conditions" v-model="briefingObject.success"></textarea>
@@ -228,19 +238,19 @@ function addBriefing() {
 						<textarea name="failure" id="failure" rows="3" class="input-text" placeholder="Mission Failure conditions" v-model="briefingObject.failure"></textarea>
 					</li>
 
-					<h4 class="card-subtitle">Restrictions</h4>
+					<div class="card-subtitle h5">Restrictions</div>
 					<li>
 						<label for="restrictions">Rules</label>
 						<textarea name="restrictions" id="restrictions" rows="3" class="input-text" placeholder="Additional rules for the mission (e.g. don't take enemy vehicles etc.)" v-model="briefingObject.restrictions"></textarea>
 					</li>
 
-					<h4 class="card-subtitle">JIP</h4>
+					<div class="card-subtitle h5">JIP</div>
 					<li>
 						<label for="jip">Available</label>
 						<input type="text" name="jip" id="jip" class="input-text" placeholder="If Join-In-Progress is supported by the mission (e.g. available, 3-minute timer)" v-model="briefingObject.jip">
 					</li>
 
-					<h4 class="card-subtitle">Mission Maker's Notes</h4>
+					<div class="card-subtitle h5">Mission Maker's Notes</div>
 					<li>
 						<label for="notes">Notes</label>
 						<textarea name="notes" id="notes" rows="3" class="input-text" placeholder="Additional notes by the mission maker" v-model="briefingObject.notes"></textarea>
@@ -248,9 +258,9 @@ function addBriefing() {
 				</ul>
 			</div>
 
-			<div class="form-category">
+			<div>
 				<ul>
-					<h4 class="card-subtitle">Side</h4>
+					<div class="card-subtitle h5">Side</div>
 					<li>
 						<select name="side" id="side" v-model="briefingObject.side">
 							<option value="#21749c">BLUFOR</option>
@@ -262,40 +272,52 @@ function addBriefing() {
 		</div>
 	</form>
 
-	<div class="btn-group">
-		<button class="btn btn-primary-outline" @click="addBriefing()" v-if="briefingStore.isEmpty">Create Briefing</button>
+	<div class="btn-group" role="group" aria-label="Button Group">
+		<button type="button" class="btn btn-outline-primary btn-lg" @click="addBriefing()" v-if="briefingStore.isEmpty">Create Briefing</button>
 	</div>
 </template>
 
 <style scoped>
-h2 {
-	@apply mb-0 pb-0;
+.h1, .h2, .h4, .h5, .h5, .h6, h1, h2, h4, h5, h5, h6 {
+	@apply mt-0 mb-2 font-medium leading-5;
+}
+.h1, h1 {
+	@apply text-4xl;
+}
+.h4, h4 {
+	@apply text-3xl;
+}
+.h5, h5 {
+	@apply text-2xl;
+}
+.h5, h5 {
+	@apply text-xl;
 }
 li {
 	@apply list-none;
 }
+input, select, textarea {
+	@apply border-gray-300 focus:ring-sky-400 my-1;
+}
 select {
-	@apply border-gray-300 focus:ring-sky-400 my-1 w-1/4;
+	@apply w-1/4;
+}
+input, textarea {
+	@apply w-full;
 }
 .btn {
-	@apply px-4 py-2 mb-2;
+	@apply inline-block;
+}
+.btn-lg {
+	@apply px-4 py-2 text-xl w-1/4;
 }
 .btn-group {
-	@apply flex flex-col justify-center mt-4 mx-auto w-1/4;
+	@apply flex flex-row justify-center;
 }
-.btn-primary-outline {
+.btn-outline-primary {
 	@apply bg-white border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white;
 }
-.card {
-	@apply border-r border-b drop-shadow-sm bg-white mb-4 p-4;
-}
-.card-body {
-	@apply w-full max-w-none p-2;
-}
 .card-meta {
-	@apply font-semibold text-sm mt-1;
-}
-.input-text {
-	@apply border-gray-300 focus:ring-sky-400 my-1 w-full;
+	@apply font-semibold text-base;
 }
 </style>
