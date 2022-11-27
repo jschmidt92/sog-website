@@ -56,5 +56,8 @@ export const useBriefingStore = defineStore('BriefingStore', {
 			this.briefingObjects = this.briefingObjects.filter((briefingObject) => briefingObject.id !== id)
 		}
 	},
-	getters: {}
+	getters: {
+		count: (state) => state.briefingObjects.length,
+		isEmpty: (state) => state.count === 0
+	}
 })

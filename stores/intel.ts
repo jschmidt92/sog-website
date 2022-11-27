@@ -32,5 +32,8 @@ export const useIntelStore = defineStore('IntelStore', {
 			this.intelObjects = this.intelObjects.filter((intelObject) => intelObject.id !== id)
 		}
 	},
-	getters: {}
+	getters: {
+		count: (state) => state.intelObjects.length,
+		isEmpty: (state) => state.count === 0
+	}
 })

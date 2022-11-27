@@ -21,12 +21,12 @@ definePageMeta ({
 				<BriefingCreate />
 		
 				<div class="btn-group">
-					<button class="btn btn-primary" @click="showOutput = !showOutput">Generate</button>
+					<button class="btn btn-primary" @click="showOutput = !showOutput" v-if="!briefingStore.isEmpty">Generate</button>
 				</div>
 			</template>
 
 			<template #output>
-				<BriefingOutput v-for="briefingObject in briefingStore.briefingObjects" :key="briefingObject.id" :briefingObject="briefingObject" v-if="showOutput" />
+				<BriefingOutput v-for="briefingObject in briefingStore.briefingObjects" :key="briefingObject.id" :briefingObject="briefingObject" v-if="showOutput && !briefingStore.isEmpty" />
 			</template>
 		</NuxtLayout>
 	</div>

@@ -263,7 +263,7 @@ function addBriefing() {
 	</form>
 
 	<div class="btn-group">
-		<button class="btn btn-primary-outline" @click="addBriefing()">Create Briefing</button>
+		<button class="btn btn-primary-outline" @click="addBriefing()" v-if="briefingStore.isEmpty">Create Briefing</button>
 	</div>
 </template>
 

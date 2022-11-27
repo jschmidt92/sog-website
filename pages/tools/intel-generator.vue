@@ -21,7 +21,7 @@ definePageMeta ({
 				<IntelCreate />
 		
 				<div class="btn-group">
-					<button class="btn btn-primary" @click="showOutput = !showOutput">Generate</button>
+					<button class="btn btn-primary" @click="showOutput = !showOutput" v-if="!intelStore.isEmpty">Generate</button>
 				</div>
 		
 				<ul>
@@ -30,7 +30,7 @@ definePageMeta ({
 			</template>
 
 			<template #output>
-				<IntelOutput v-if="showOutput" />
+				<IntelOutput v-if="showOutput && !intelStore.isEmpty" />
 			</template>
 		</NuxtLayout>
 	</div>
