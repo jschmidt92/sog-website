@@ -26,10 +26,10 @@ function copyToClipboard(id) {
 				<button class="btn btn-primary-outline" @click="copyToClipboard('outputText')">Copy to Clipboard</button>
 			</div>
 			<div class="card-meta-child">
-				<p id="outputText" class="card-meta-code">EVGAR(intel,intelList) = [<template v-for="(intelObject, index) in intelStore.intelObjects">
-					<template v-if="index !== 0">, ["{{ intelObject.title }}", "{{ intelObject.content }}", {{ intelObject.duration }}, {{ intelObject.deleteObject }}, {{ intelObject.shareGlobally }}]</template>
-					<template v-else>["{{ intelObject.title }}", "{{ intelObject.content }}", {{ intelObject.duration }}, {{ intelObject.deleteObject }}, {{ intelObject.shareGlobally }}]</template></template>];
-				</p>
+<p id="outputText" class="card-meta-code">EVGAR(intel,intelList) = [<template v-for="(intelObject, index) in intelStore.intelObjects">
+<template v-if="index !== 0">, ["{{ intelObject.title }}", "{{ intelObject.content }}", {{ intelObject.duration }}, {{ intelObject.deleteObject }}, {{ intelObject.shareGlobally }}]</template>
+<template v-else>["{{ intelObject.title }}", "{{ intelObject.content }}", {{ intelObject.duration }}, {{ intelObject.deleteObject }}, {{ intelObject.shareGlobally }}]</template></template>];
+</p>
 			</div>
 		</div>
 	</div>
