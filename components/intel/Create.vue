@@ -38,7 +38,7 @@ function addIntel() {
 				</div>
 				<div>
 					<label for="input-title">Content</label>
-					<textarea name="input-content" id="input-content" class="input-text" placeholder="Input Content Here" v-model="intelObject.content"></textarea>
+					<textarea name="input-content" id="input-content" rows="3" class="input-text" placeholder="Input Content Here" v-model="intelObject.content"></textarea>
 				</div>
 				<div>
 					<label for="input-title">Pick-up Duration</label>
