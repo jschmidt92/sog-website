@@ -1,13 +1,13 @@
 <template>
 	<div class="bg-black">
-			<main class="container max-w-7xl mx-auto">
-				<section>
-					<slot name="feat"></slot>
-				</section>
-			</main>
-			<footer class="footer">
-				<slot name="footer"></slot>
-			</footer>
+		<main class="container max-w-7xl mx-auto">
+			<section>
+				<slot name="feat"></slot>
+			</section>
+		</main>
+		<footer class="footer">
+			<slot name="footer"></slot>
+		</footer>
 	</div>
 </template>
 

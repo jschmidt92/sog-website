@@ -5,9 +5,9 @@
 				<slot name="content"></slot>
 				<slot name="empty"></slot>
 			</div>
-				<div class="col-span-2">
-					<slot name="author"></slot>
-				</div>
+			<div class="col-span-2">
+				<slot name="author"></slot>
+			</div>
 		</section>
 	</main>
 </template>

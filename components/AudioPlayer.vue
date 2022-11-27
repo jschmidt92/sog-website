@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const audioPlayer = ref(null)
+const audioPlayer = ref()
 const emit = defineEmits<{
 	(e: 'goBack', value: boolean): void
 	(e: 'next'): void
