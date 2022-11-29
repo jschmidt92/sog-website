@@ -24,12 +24,12 @@ useHead ({
 				<BriefingCreate />
 		
 				<div class="btn-group">
-					<button class="btn btn-primary btn-lg" @click="showOutput = !showOutput" v-if="!briefingStore.isEmpty">Generate</button>
+					<button class="btn btn-primary btn-lg" @click="showOutput = !showOutput">Generate</button>
 				</div>
 			</template>
 
 			<template #output>
-				<BriefingOutput v-for="briefingObject in briefingStore.briefingObjects" :key="briefingObject.id" :briefingObject="briefingObject" v-if="showOutput && !briefingStore.isEmpty" />
+				<BriefingOutput v-for="briefingObject in briefingStore.briefingObjects" :key="briefingObject.id" :briefingObject="briefingObject" v-if="showOutput" />
 			</template>	
 		</NuxtLayout>
 	</div>

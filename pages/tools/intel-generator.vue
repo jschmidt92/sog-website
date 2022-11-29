@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useIntelStore } from '@/stores/intel'
 
 const intelStore = useIntelStore()
@@ -25,7 +25,7 @@ useHead ({
 				<IntelCreate />
 		
 				<div class="btn-group">
-					<button class="btn btn-primary" @click="showOutput = !showOutput" v-if="!intelStore.isEmpty">Generate</button>
+					<button class="btn btn-primary btn-lg" @click="showOutput = !showOutput">Generate</button>
 				</div>
 		
 				<ul>
@@ -34,7 +34,7 @@ useHead ({
 			</template>
 
 			<template #output>
-				<IntelOutput v-if="showOutput && !intelStore.isEmpty" />
+				<IntelOutput v-if="showOutput" />
 			</template>
 		</NuxtLayout>
 	</div>
@@ -42,10 +42,13 @@ useHead ({
 
 <style scoped>
 .btn {
-	@apply px-4 py-2;
+	@apply inline-block;
+}
+.btn-lg {
+	@apply px-4 py-2 text-xl w-1/4;
 }
 .btn-group {
-	@apply flex flex-col justify-center mb-4 mx-auto w-1/4;
+	@apply flex flex-row justify-center mb-4;
 }
 .btn-primary {
 	@apply bg-sky-400 border border-sky-400 text-white hover:bg-sky-600;

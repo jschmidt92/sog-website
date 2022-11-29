@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/knowledgebase/framework/attack', '/knowledgebase/framework/destroy', '/knowledgebase/framework/hostage', '/knowledgebase/framework/hvt', '/knowledgebase/framework/ied',
-        '/knowledgebase/functions/ambient', '/knowledgebase/functions/briefing', '/knowledgebase/functions/medical', '/knowledgebase/functions/service'
+        '/knowledgebase/functions/ambient', '/knowledgebase/functions/briefing', '/knowledgebase/functions/medical', '/knowledgebase/functions/service', '/tools/briefing-generator', '/tools/intel-generator'
       ]
     },
     preset: 'firebase'

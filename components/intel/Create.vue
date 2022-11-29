@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useIntelStore } from '@/stores/intel'
 
 const intelStore = useIntelStore()
