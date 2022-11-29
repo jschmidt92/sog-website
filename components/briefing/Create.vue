@@ -35,9 +35,14 @@ const briefingObject = ref({
 	side: ''
 })
 
+function scrollToTop() {
+	window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+}
+
 function addBriefing() {
 	if (!briefingObject.value.faction || !briefingObject.value.groups || !briefingObject.value.summary || !briefingObject.value.roe || !briefingObject.value.intent || !briefingObject.value.frequencies || !briefingObject.value.success || !briefingObject.value.failure || !briefingObject.value.restrictions || !briefingObject.value.side) {
 		isOpen.value = !isOpen.value
+		scrollToTop()
 		return {}
 	}
 

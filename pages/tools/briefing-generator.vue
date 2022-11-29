@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useBriefingStore } from '@/stores/briefing'
 
 const briefingStore = useBriefingStore()
@@ -30,7 +30,7 @@ useHead ({
 
 			<template #output>
 				<BriefingOutput v-for="briefingObject in briefingStore.briefingObjects" :key="briefingObject.id" :briefingObject="briefingObject" v-if="showOutput && !briefingStore.isEmpty" />
-			</template>
+			</template>	
 		</NuxtLayout>
 	</div>
 </template>
