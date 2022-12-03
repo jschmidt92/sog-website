@@ -5,6 +5,12 @@ interface Link {
 	target?: string
 }
 
+type Theme = 'dark' | 'light'
+
+const setColorTheme = (newTheme: Theme) => {
+	useColorMode().preference = newTheme
+}
+
 const links: Link[] = [
 	{ name: 'Home', href: '/' },
 	{ name: 'Blog', href: '/blog' },
@@ -40,6 +46,10 @@ let displayDropdown = ref(false)
 							</div>
 						</div>
 					</li>
+					<button class="nav-link" @click="setColorTheme($colorMode.preference == 'dark' ? 'light' : 'dark')">
+						<template v-if="$colorMode.value == 'light'"><i class="fas fa-sun"></i></template>
+						<template v-else><i class="fas fa-moon"></i></template>
+					</button>
 				</ul>
 			</nav>
 		</header>

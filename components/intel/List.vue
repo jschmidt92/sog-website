@@ -41,9 +41,6 @@ p {
 .btn-danger {
 	@apply bg-red-600 border border-red-600 text-white hover:bg-red-800;
 }
-.card {
-	@apply border-r border-b drop-shadow-sm bg-white mb-4 p-2;
-}
 .card-header {
 	@apply flex justify-between items-center;
 }

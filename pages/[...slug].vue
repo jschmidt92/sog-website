@@ -90,7 +90,7 @@ useHead ({
       <template #content>
         <article class="card">
           <ClientOnly>
-            <ContentRenderer class="card-body prose prose-zinc" :value="knowledgebase">
+            <ContentRenderer class="card-body prose dark:prose-invert prose-zinc" :value="knowledgebase">
               <template #empty>
                 <p>No content found.</p>
               </template>

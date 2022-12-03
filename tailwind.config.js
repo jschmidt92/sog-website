@@ -10,6 +10,7 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}'
   ],
+  darkMode: 'class',
   theme: {
     colors: {
       transparent: 'transparent',

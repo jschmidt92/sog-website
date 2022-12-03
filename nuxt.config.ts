@@ -2,15 +2,8 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {}
-        }
-      }
-    }
+  colorMode: {
+    classSuffix: ''
   },
   content: {
     markdown: {
@@ -20,11 +13,11 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ['~/assets/css/tailwind.css', '~/assets/css/all.min.css'],
+  css: ['~/assets/css/all.min.css'],
   head: {
     script: ['~/assets/js/all.min.js']
   },
-  modules: ['@nuxt/content', '@pinia/nuxt'],
+  modules: ['@nuxt/content', '@nuxtjs/color-mode', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
   nitro: {
     prerender: {
       routes: [
@@ -33,11 +26,5 @@ export default defineNuxtConfig({
       ]
     },
     preset: 'firebase'
-  },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
   }
 })

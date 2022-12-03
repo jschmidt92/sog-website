@@ -6,7 +6,7 @@ useHead ({
 });
 
 const { query } = useRoute()
-const { author } = query
+const { author } = query as any
 const blogPostList = await queryContent("article").where({ author }).sort({ _file: -1, $numeric: true }).find()
 </script>
 

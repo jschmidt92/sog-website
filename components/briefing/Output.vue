@@ -158,7 +158,7 @@ ENDTAB;
 
 <style scoped>
 input, select, textarea {
-	@apply border-gray-300 focus:ring-sky-400 my-1;
+	@apply border-gray-300 focus:ring-sky-400 my-1 dark:border-black dark:bg-zinc-900 text-gray-600;
 }
 select {
 	@apply w-1/4;
@@ -185,6 +185,6 @@ input, textarea {
 	@apply flex flex-row justify-between items-center;
 }
 .card-meta {
-	@apply font-semibold text-base;
+	@apply font-semibold text-base text-gray-400;
 }
 </style>

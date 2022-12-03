@@ -45,22 +45,16 @@ p {
 .btn-primary-outline {
 	@apply bg-white border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white;
 }
-.card {
-	@apply border-r border-b drop-shadow-sm bg-white p-4;
-}
-.card-body {
-	@apply w-full max-w-none p-2;
-}
 .card-header {
 	@apply flex justify-between items-center;
 }
 .card-meta {
-	@apply text-gray-300 text-sm;
+	@apply text-gray-400 text-sm;
 }
 .card-meta-child {
 	@apply flex justify-between items-center;
 }
 .card-meta-code {
-	@apply bg-gray-100;
+	@apply bg-gray-100 text-gray-600;
 }
 </style>

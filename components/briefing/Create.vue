@@ -302,7 +302,7 @@ li {
 	@apply list-none;
 }
 input, select, textarea {
-	@apply border-gray-300 focus:ring-sky-400 my-1;
+	@apply border-gray-300 focus:ring-sky-400 my-1 dark:bg-zinc-900 dark:border-black;
 }
 select {
 	@apply w-1/4;

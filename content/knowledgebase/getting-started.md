@@ -16,7 +16,7 @@ First of all, you need to setup a mission folder where you store your mission fi
 
 > **Note:** It is advised that you use some sort of naming convention to keep your missions organised. Here's on for example: `CO16_Operation_Name.Altis`, where `CO` stands for Cooperative Mission, `16` is the available player slots, and `Operation_Name` is the name of the mission. **Don't Use Spaces in the Mission File, Use Underscores Instead.**
 
-Once the folder is created, head over to the GitHub Repository and Download the Latest Release of the Framework from [here](https://github.com/InnovativeStudios/SOG/releases). Unzip the file and put it in the mission folder, so you should have something like this:
+Once the folder is created, head over to the GitHub Repository and Download the Latest Release of the Framework from [here](https://github.com/jschmidt92/sog-framework/releases/latest). Unzip the file and put it in the mission folder, so you should have something like this:
 
 ![Screenshot](https://camo.githubusercontent.com/1c6b92486b6fd263e5cb2b5f2ab19ffef4f5df95894988ba1f08d161efa3708e/68747470733a2f2f692e696d6775722e636f6d2f763362393878632e706e67)
 
@@ -58,7 +58,7 @@ The optional modules and their configuration are covered in the README file of e
 
 * Debug Mode: Enabled by default, while it's enabled it'll show `DEBUG` missages in the in-game chat which can help with the development of the mission. Don't forget to disable this before deploying the mission. `INFO`, `WARNING` and `ERROR` messages will show even if this setting is disabled.
 
-* End Conditions: There are multiple End Conditions that you can use in your mission which are covered [here](https://github.com/InnovativeStudios/SOG/blob/main/SOGFramework/core/end_conditions/README.md).
+* End Conditions: There are multiple End Conditions that you can use in your mission which are covered [here](https://github.com/jschmidt92/sog-framework/blob/master/SOGFramework/core/end_conditions/README.md).
 
 ### CfgDebriefing
 This file is located in `SOGFramework\debriefing\` folder and it holds all the possible mission endings for the mission. There are two sections by default:
@@ -140,7 +140,7 @@ After that's done, you need to configure the individual player slots like shown 
 4. **Rank:** Optionally you can set the rank of the unit.
 
 This is the basic setup of a unit, no need to set anything else.
-**At this point the basics are configured and you can start working on the mission itself. Remember, if you need more information about the modules, then check out the `README` in the module folder. You can find the modules [here](https://github.com/InnovativeStudios/SOG/tree/development/SOGFramework/core).
+**At this point the basics are configured and you can start working on the mission itself. Remember, if you need more information about the modules, then check out the `README` in the module folder. You can find the modules [here](https://github.com/jschmidt92/sog-framework/tree/master/SOGFramework/core).
 
 ## Notes
 * **CBA Settings:** The framework comes with a default CBA Settings file that you can find in the root of the mission folder. However, it covers only a couple of basic mods (e.g. ACE, TFAR, Etc.), so you need to include any additional mods here.
