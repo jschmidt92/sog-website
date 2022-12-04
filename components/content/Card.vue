@@ -21,16 +21,16 @@ defineProps<{
 
 <style scoped lang="scss">
 .card {
-  @apply drop-shadow-md dark:bg-zinc-900 bg-white h-40 max-h-40 mb-0;
+  @apply drop-shadow-md bg-zinc-900 h-40 max-h-40 mb-0;
   &.card-feat {
     @apply flex items-stretch;
     .card-body {
       @apply flex flex-1 flex-col lg:flex-row items-center justify-center gap-2 p-2;
       icon {
-        @apply flex flex-row lg:basis-1/4 justify-center dark:text-white text-gray-500;
+        @apply flex flex-row lg:basis-1/4 justify-center text-white;
       }
       .card-text {
-        @apply flex flex-col lg:basis-3/4 justify-end dark:text-white text-gray-400 text-center lg:text-start text-xs sm:text-sm md:text-base;
+        @apply flex flex-col lg:basis-3/4 justify-end text-gray-400 text-center lg:text-start text-xs sm:text-sm md:text-base;
         a {
           @apply font-semibold text-sm sm:text-base md:text-xl lg:text-2xl pl-0;
         }

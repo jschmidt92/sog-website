@@ -19,7 +19,7 @@ html.light {
 }
 
 .module {
-	@apply sticky top-4 hidden lg:block drop-shadow-md dark:bg-zinc-800 bg-zinc-900;
+	@apply sticky top-4 hidden lg:block drop-shadow-md dark:bg-zinc-800 bg-white;
 }
 .module-body {
 	@apply w-full max-w-none px-6 py-4;
@@ -81,7 +81,7 @@ html.light {
 	@apply h-1/2;
 }
 .author-name {
-	@apply text-5xl text-center py-4 dark:text-black text-white;
+	@apply text-5xl text-center py-4 dark:text-white;
 	font-family: TangerineRegular;
 }
 
@@ -97,22 +97,22 @@ html.light {
 }
 
 .card {
-	@apply drop-shadow-md bg-zinc-900 dark:bg-zinc-800 prose prose-sm lg:prose-base prose-zinc prose-a:no-underline prose-img:!mt-0 max-w-none mb-4;
+	@apply drop-shadow-md bg-white dark:bg-zinc-800 prose prose-sm lg:prose-base prose-zinc prose-a:no-underline prose-img:!mt-0 max-w-none mb-4;
 }
 .card-title {
 	@apply text-xl font-semibold hover:text-sky-400;
 }
 .card-body {
-	@apply w-full max-w-none p-4 text-gray-100;
+	@apply w-full max-w-none p-4 dark:text-gray-400;
 }
 .card-body a {
-	@apply dark:text-black text-white;
+	@apply dark:text-white;
 }
 .card-body a:hover {
 	@apply hover:text-sky-400
 }
 .card-body h1, .card-body h3, .card-body blockquote {
-	@apply dark:text-black text-white dark:border-black;
+	@apply dark:text-white dark:border-black;
 }
 .card-body.prose a {
 	@apply text-sky-400 no-underline px-1;
@@ -125,7 +125,10 @@ html.light {
 	@apply rounded-none;
 }
 .card-footer {
-	@apply border-t flex justify-between items-center text-sm w-full max-w-none px-4;
+	@apply border-t dark:border-zinc-900 flex justify-between items-center text-sm w-full max-w-none px-4;
+}
+.card-footer p, button {
+	@apply dark:text-white;
 }
 
 .feat, .feat-body {
@@ -192,10 +195,10 @@ html.light {
 }
 
 .toc {
-	@apply sticky top-4 hidden lg:block drop-shadow-md dark:bg-zinc-800 bg-zinc-900 px-6 py-4;
+	@apply sticky top-4 hidden lg:block drop-shadow-md dark:bg-zinc-800 bg-white px-6 py-4;
 }
 .toc-title {
-	@apply font-semibold dark:text-black text-white;
+	@apply font-semibold dark:text-white;
 }
 .toc-body {
 	@apply w-full max-w-none p-3;
