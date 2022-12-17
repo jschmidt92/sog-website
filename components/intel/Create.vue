@@ -40,17 +40,17 @@ function addIntel() {
 				<h1>Add Intel</h1>
 				<div class="h4">INTEL</div>
 				<div>
-					<label for="input-title">Title</label>
+					<label for="input-title">Title (Required)</label>
 					<input type="text" name="input-title" id="input-title" placeholder="Input Title Here" v-model="intelObject.title">
 				</div>
 				<div>
-					<label for="input-title">Content</label>
+					<label for="input-title">Content (Required)</label>
 					<textarea name="input-content" id="input-content" rows="3" placeholder="Input Content Here" v-model="intelObject.content"></textarea>
 				</div>
 				<div>
 					<label for="input-title">Pick-up Duration</label>
 					<input type="text" name="input-duration" id="input-duration" class="small" placeholder="5" v-model="intelObject.duration">
-					<span>seconds</span>
+					<span>seconds (Required)</span>
 				</div>
 				<div>
 					<input type="checkbox" name="delete-object" id="delete-object" value="true" v-model="intelObject.deleteObject">
@@ -114,5 +114,8 @@ input, textarea {
 }
 .btn-outline-primary {
 	@apply bg-white border border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-white;
+}
+input::placeholder,textarea::placeholder {
+	@apply text-gray-400 dark:text-gray-700;
 }
 </style>

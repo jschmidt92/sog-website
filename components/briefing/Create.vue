@@ -95,11 +95,11 @@ function addBriefing() {
 				<ul>
 					<li>
 						<div class="card-subtitle h5">ORBAT</div>
-						<label for="faction">Player Faction</label>
+						<label for="faction">Player Faction (Required)</label>
 						<input type="text" name="faction" id="faction" class="input-text" placeholder="The players' faction (e.g. 101st Airborne Division, US Army)" v-model="briefingObject.faction">
 					</li>
 					<li>
-						<label for="groups">List of Groups</label>
+						<label for="groups">List of Groups (Required)</label>
 						<textarea name="groups" id="groups" rows="5" class="input-text" placeholder="A list of the player groups, their size and callsign (e.g. 1xAH-64E Apache - Callsign: RAPTOR etc.)" v-model="briefingObject.groups"></textarea>
 					</li>
 				</ul>
@@ -110,7 +110,7 @@ function addBriefing() {
 				<ul>
 					<div class="card-subtitle h5">Background</div>
 					<li>
-						<label for="summary">Summary</label>
+						<label for="summary">Summary (Required)</label>
 						<textarea name="summary" id="summary" rows="3" class="input-text" placeholder="A short background story for the mission" v-model="briefingObject.summary"></textarea>
 					</li>
 
@@ -168,7 +168,7 @@ function addBriefing() {
 					
 					<div class="card-meta">Rules of Engagement</div>
 					<li>
-						<label for="roe">Description</label>
+						<label for="roe">Description (Required)</label>
 						<textarea type="text" name="roe" id="roe" rows="3" class="input-text" placeholder="Summary of the ROE" v-model="briefingObject.roe"></textarea>
 					</li>
 				</ul>
@@ -179,7 +179,7 @@ function addBriefing() {
 				<ul>
 					<div class="card-subtitle h5">Mission Intent</div>
 					<li>
-						<label for="intent">Description</label>
+						<label for="intent">Description (Required)</label>
 						<textarea name="intent" id="intent" rows="3" class="input-text" placeholder="Intent of the mission and the objectives (e.g. your objective is to capture...)" v-model="briefingObject.intent"></textarea>
 					</li>
 				</ul>
@@ -211,7 +211,7 @@ function addBriefing() {
 
 					<div class="card-subtitle h5">Signals</div>
 					<li>
-						<label for="frequencies">Radio Frequencies</label>
+						<label for="frequencies">Radio Frequencies (Required)</label>
 						<textarea name="frequencies" id="frequencies" rows="3" class="input-text" placeholder="The radio net structure used in the mission" v-model="briefingObject.frequencies"></textarea>
 					</li>
 				</ul>
@@ -235,17 +235,17 @@ function addBriefing() {
 					</li>
 					<div class="card-subtitle h5">End Conditions</div>
 					<li>
-						<label for="success">Success</label>
+						<label for="success">Success (Required)</label>
 						<textarea name="success" id="success" rows="3" class="input-text" placeholder="Mission Success conditions" v-model="briefingObject.success"></textarea>
 					</li>
 					<li>
-						<label for="failure">Failure</label>
+						<label for="failure">Failure (Required)</label>
 						<textarea name="failure" id="failure" rows="3" class="input-text" placeholder="Mission Failure conditions" v-model="briefingObject.failure"></textarea>
 					</li>
 
 					<div class="card-subtitle h5">Restrictions</div>
 					<li>
-						<label for="restrictions">Rules</label>
+						<label for="restrictions">Rules (Required)</label>
 						<textarea name="restrictions" id="restrictions" rows="3" class="input-text" placeholder="Additional rules for the mission (e.g. don't take enemy vehicles etc.)" v-model="briefingObject.restrictions"></textarea>
 					</li>
 
@@ -265,7 +265,7 @@ function addBriefing() {
 
 			<div>
 				<ul>
-					<div class="card-subtitle h5">Side</div>
+					<div class="card-subtitle h5">Side (Required)</div>
 					<li>
 						<select name="side" id="side" v-model="briefingObject.side">
 							<option value="#21749c">BLUFOR</option>
@@ -324,5 +324,8 @@ input, textarea {
 }
 .card-meta {
 	@apply font-semibold text-base;
+}
+input::placeholder,textarea::placeholder {
+	@apply text-gray-400 dark:text-gray-700;
 }
 </style>
